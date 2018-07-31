@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <h1></h1>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Bills</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<my-component></my-component>
+
+  <ion-list>
+    <button ion-item *ngFor="let bill of bills; let i = index" (click)="onLoadBill(bill, i)">
+      <h2>{{ bill.bill }}</h2>
+      <ion-note>{{ bill.amount }}</ion-note>
+    </button>
+  </ion-list>
+
+  <h2>test</h2>
+</ion-content>

@@ -1,0 +1,44 @@
+<!--
+  Generated template for the AddbillPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <h1></h1>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="billForm" (ngSubmit)="onSubmit()">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Bill Name</ion-label>
+        <ion-input
+          type="text"
+          formControlName="bill"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Amount</ion-label>
+        <ion-textarea formControlName="amount"></ion-textarea>
+      </ion-item>
+    </ion-list>
+    
+    <button
+      type="submit"
+      ion-button
+      block
+      [disabled]="!billForm.valid"
+      color="secondary">Add Bill</button>
+      <button type="button" ion-button block color="secondary" (click)="onGoToBills()">Cancel</button>
+  </form>
+</ion-content>
